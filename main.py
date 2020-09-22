@@ -40,7 +40,7 @@ def connection_success():
 def connection_failed(filename, error_repeats, duration):
     s = pysine.PySine()
 
-    for i in range(0, error_repeats):
+    for _ in range(0, error_repeats):
         s.sine(frequency=error_tone, duration=duration)
         s.sine(frequency=0, duration=duration)
     s.save(filename)

@@ -71,12 +71,9 @@ class PySine(object):
         self.stream.write(data)
 
     def save(self, filename):
-        sample_format = paInt16  # 16 bits per sample
-        channels = 1
-        fs = 44100  # Record at 44100 samples per second
 
         wf = wave.open(filename, 'wb')
-        wf.setnchannels(channels)
+        wf.setnchannels(1)
         wf.setsampwidth(1)
         wf.setframerate(self.BITRATE)
         wf.writeframes(self.frames)
